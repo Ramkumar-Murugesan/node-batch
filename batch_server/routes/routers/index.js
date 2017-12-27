@@ -1,0 +1,1 @@
+exports.activitiesRouter = require("./activitiesRouter");

@@ -1,0 +1,84 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Fulltest
+host: 52.175.215.67:9090
+basePath: /Fulltest_10106
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /Fulltest_Default_Activity/Fulltest:
+    put:
+      description: Update Fulltest
+      parameters:
+        - name: fulltest
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Fulltest'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Fulltest
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Fulltest
+      parameters:
+        - name: fulltest
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Fulltest'
+      responses:
+        "201":
+          description: Success
+  /Fulltest_Default_Activity/Fulltest/{FulltestId}:
+    delete:
+      description: Delete Fulltest
+      parameters:
+        - name: FulltestId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Fulltest by id
+      parameters:
+        - name: FulltestId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+
+definitions:
+  Fulltest:
+    required:
+      - name
+      - age
+
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      age:
+        type: 

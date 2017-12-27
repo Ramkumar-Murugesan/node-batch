@@ -1,0 +1,16 @@
+plugins {
+  id "com.moowork.node" version "1.2.0"
+}
+task zipFolder(type: Zip) {
+    from projectDir
+    baseName 'app'
+    destinationDir projectDir
+}
+
+task build(dependsOn: zipFolder) << {
+  'Node app zipped!'
+}
+
+task buildProject(dependsOn: npm_install) << {
+  println 'Dependencies installed!'
+}
